@@ -5,7 +5,13 @@ document.getElementById('add-task-btn').addEventListener('click', function() {
       const newTask = document.createElement('li');
       newTask.textContent = taskInput.value;
       taskList.appendChild(newTask);
-      taskInput.value = '';
+      taskInput.value = '';   
+      const deleteBtn = document.createElement('button');  
+      deleteBtn.textContent = 'Delete';  
+      deleteBtn.addEventListener('click', function() {  
+          taskList.removeChild(newTask);  
+      }); 
+      newTask.appendChild(deleteBtn);  
     }
   });
   
@@ -17,6 +23,12 @@ document.getElementById('add-task-btn').addEventListener('click', function() {
       newNote.textContent = noteInput.value;
       noteList.appendChild(newNote);
       noteInput.value = '';
+      const deleteBtn = document.createElement('button');  
+      deleteBtn.textContent = 'Delete'; 
+      deleteBtn.addEventListener('click', function() {  
+          noteList.removeChild(newNote);  
+      });  
+      newNote.appendChild(deleteBtn); 
     }
   });
   
@@ -28,6 +40,12 @@ document.getElementById('add-task-btn').addEventListener('click', function() {
       newGoal.textContent = goalInput.value;
       goalList.appendChild(newGoal);
       goalInput.value = ''; 
+      const deleteBtn = document.createElement('button');  
+      deleteBtn.textContent = 'Delete';  
+      deleteBtn.addEventListener('click', function() {  
+          goalList.removeChild(newGoal);  
+      });  
+      newGoal.appendChild(deleteBtn); 
     }
   });
   
